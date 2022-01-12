@@ -60,8 +60,8 @@ public class Persona {
 		
 	}
 	public void leerWindow() {
-		String mensajeNombre= "Introduce el nombre del autor:";
-		String mensajeApellidos= "Introduce el apellido del autor:";
+		String mensajeNombre= "Introduce el nombre de la persona:";
+		String mensajeApellidos= "Introduce el apellido de la persona:";
 		
 		FechaLugar.mensajeDia("Introduce el dia");
 		FechaLugar.mensajeMes("Introduce el mes");
