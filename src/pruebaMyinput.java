@@ -41,6 +41,8 @@ public class pruebaMyinput {
 		
 		persona1.leerWindow();
 		
+		System.out.println(persona1);
+		
 		
 
 	}

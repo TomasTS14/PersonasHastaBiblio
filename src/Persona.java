@@ -68,11 +68,27 @@ public class Persona {
 		FechaLugar.mensajeAnno("Introduce el año");
 		
 		FechaLugar.mensajePais("Introduce el país");
+		
 				
 		nombre = MyInput.readStringWindow(mensajeNombre);
+		nombre=MyInput.UpperThenLow(nombre);
 		apellidos = MyInput.readStringWindow(mensajeApellidos);
 		fechaNacimiento = FechaLugar.daFechaWindow();
 		paisNacimiento= FechaLugar.daPaisConWindow();
 	}
+	
+	@Override
+	
+	public String toString() {
+		
+		String persona = "Nombre: \t\t"+this.nombre+"\n"+
+						"Apellidos:\t\t"+this.apellidos+"\n"+
+						"Fecha de nacimiento: \t"+	this.fechaNacimiento+"\n"
+						+ "País de nacimiento:\t"+this.paisNacimiento+"\n";
+		
+		return persona;
+	}
+	
+	
 
 }
