@@ -1,3 +1,4 @@
+import javax.swing.JOptionPane;
 
 public class Persona {
 	private static int numerPersonas;
@@ -44,16 +45,25 @@ public class Persona {
 	public void setApellidos(String apellidos) {
 		this.apellidos= apellidos;
 	}
-	public void fechaNacimiento(String fechaNacimiento) {
-		this.fechaNacimiento= fechaNacimiento;
+	public void setFechaNacimiento(String dia, String mes, String anno) {
+		
+		if(FechaLugar.fechaValida(dia, mes, anno)){
+			this.fechaNacimiento= FechaLugar.convierteFechas(dia, mes, anno);
+		}
+	}
+	
+	public void setFechaNaciWindow() {
+		String fecha=FechaLugar.daFechaWindow();
+		this.fechaNacimiento= fecha;
 	}
 	public void setPaisNacimiento(String paisNacimiento) {
 		this.paisNacimiento= paisNacimiento;
+		MyInput.UpperThenLow(paisNacimiento);
 	}
 	
 	public void leerConsola() {
 		nombre= MyInput.readStringConsole();
-		nombre= MyInput.UpperThenLow(nombre);
+		MyInput.UpperThenLow(nombre);
 		apellidos = MyInput.readStringConsole();
 		fechaNacimiento= FechaLugar.daFechaConsole();
 		paisNacimiento = FechaLugar.daPaisCons();
@@ -71,8 +81,9 @@ public class Persona {
 		
 				
 		nombre = MyInput.readStringWindow(mensajeNombre);
-		nombre=MyInput.UpperThenLow(nombre);
+		MyInput.UpperThenLow(nombre);
 		apellidos = MyInput.readStringWindow(mensajeApellidos);
+		JOptionPane.showMessageDialog(null, "Ahora fecha de nacimiento-->");
 		fechaNacimiento = FechaLugar.daFechaWindow();
 		paisNacimiento= FechaLugar.daPaisConWindow();
 	}

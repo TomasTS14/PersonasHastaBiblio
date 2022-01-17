@@ -89,7 +89,7 @@ public static void mensajeCiudad(String mensajeCiudadVentana) {
 			
 			return fecha;
 	}
-	private static boolean fechaValida (String dia, String mes, String anno) {
+	public static boolean fechaValida (String dia, String mes, String anno) {
 		int diaNum= Integer.parseInt(dia);
 		int mesNum = Integer.parseInt(mes);
 		int annoNum= Integer.parseInt(anno);
@@ -102,32 +102,51 @@ public static void mensajeCiudad(String mensajeCiudadVentana) {
 	
 		return true;
 	}
+	public static String convierteFechas(String dia, String mes, String anno) {
+		String fechaCompleta;
+		if (fechaValida(dia, mes, anno)) {
+			 fechaCompleta= dia+"/"+mes+"/"+anno;
+			return fechaCompleta;
+		}
+		return "error";
+		
+	}
 	
 	public static String daPaisCons() {
 		pais= MyInput.readStringConsole();
 		
 		
-		pais=MyInput.UpperThenLow(pais);
+		MyInput.UpperThenLow(pais);
 		
 		return pais;
 	}
 	public static String daPaisConWindow() {
 		pais= MyInput.readStringWindow(mensajePais);
-		pais= MyInput.UpperThenLow(pais);
+		MyInput.UpperThenLow(pais);
 		return pais;
 	}
 	
 	public static String daCiudadCons() {
 		
 		ciudad= MyInput.readStringConsole();
-		ciudad= MyInput.UpperThenLow(ciudad);
+		MyInput.UpperThenLow(ciudad);
 		
 		return ciudad;
 	}
 	public static String daCiudadConWindow() {
 		ciudad= MyInput.readStringWindow(mensajeCiudad);
-		ciudad= MyInput.UpperThenLow(ciudad);
+		MyInput.UpperThenLow(ciudad);
 		return ciudad;
+	}
+	public static  String leerLugar() {
+		System.out.printf("Ciudad: \t");
+		ciudad = daCiudadCons();
+		System.out.println("Pais: \t");
+		pais= daPaisCons();
+		
+		String lugarCompleto = ciudad+" ,"+pais;
+		
+		return lugarCompleto;
 	}
 	
 

@@ -54,9 +54,9 @@ public class MyInput {
 		return readDouble;
 	}
 	
-	public static String UpperThenLow(String objeto) {
+	public static void UpperThenLow(String objeto) {
 		objeto= objeto.substring(0,1).toUpperCase()+objeto.substring(1).toLowerCase();
-		return objeto;
+		
 	}
 	
 	
