@@ -62,10 +62,14 @@ public class Persona {
 	}
 	
 	public void leerConsola() {
+		System.out.println("Nombre:");
 		nombre= MyInput.readStringConsole();
 		MyInput.UpperThenLow(nombre);
+		System.out.println("Apellidos:");
 		apellidos = MyInput.readStringConsole();
+		
 		fechaNacimiento= FechaLugar.daFechaConsole();
+		System.out.println("País nacimiento:");
 		paisNacimiento = FechaLugar.daPaisCons();
 		
 	}

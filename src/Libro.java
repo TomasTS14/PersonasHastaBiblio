@@ -40,6 +40,9 @@ public class Libro {
 	public String getCodigo() {
 		return ISBN;
 	}
+	public String getLugarPublic() {
+		return lugarPubli;
+	}
 	public String getFecha() {
 		return fechaPubli;
 	}
@@ -49,17 +52,21 @@ public class Libro {
 	public void setTitulo(String titulo) {
 		this.titulo= titulo;
 	}
-	public void edicion(String edicion) {
+	public void setEdicion(String edicion) {
 		this.edicion=edicion;
 	}
-	public void setAutor(String nombre, String apellidos) {
-		MyInput.UpperThenLow(nombre);
-		autor.setNombre(nombre);
-		autor.setApellidos(apellidos);
+	public void setAutor(Autor autor) {
+	this.autor= autor;
 		
 	}
 	public void setCodigo (String ISBN) {
 		this.ISBN= ISBN;
+	}
+	public void setLugarPubli (String ciudad, String estado, String pais) {
+		MyInput.UpperThenLow(ciudad);
+		MyInput.UpperThenLow(estado);
+		MyInput.UpperThenLow(pais);
+		lugarPubli+=ciudad+","+estado+"("+pais+")";
 	}
 	public void setfechaPublicacion(String dia, String mes, String anno) {
 		fechaPubli=FechaLugar.convierteFechas(dia, mes, anno);
@@ -69,33 +76,48 @@ public class Libro {
 		paginas= numero;
 	}
 	
-	public Libro leerWindow() {
-		Libro libro= new Libro();
-		Autor autorAux= new Autor();
-		
-		libro.autor= autorAux;
-		
-		FechaLugar.mensajeDia("dia:");
-		FechaLugar.mensajeMes("mes:");
-		FechaLugar.mensajeAnno("año:");
-		FechaLugar.mensajeCiudad("Que ciudad:");
-		FechaLugar.mensajePais("Que pais:");
-		libro.titulo= MyInput.readStringWindow("Titulo:");
-		libro.edicion= MyInput.readStringWindow("Edicion:");
-		autorAux.setNombre(MyInput.readStringWindow("Nombre autor:"));
-		autorAux.setApellidos(MyInput.readStringWindow("Apellido del autor:"));
-		libro.ISBN=MyInput.readStringWindow("ISBN:");
-		libro.fechaPubli= FechaLugar.daFechaWindow();
-		libro.lugarPubli= FechaLugar.daCiudadConWindow() +", "+ FechaLugar.daPaisConWindow();
-		
-		return libro;
+	public void leerConsola() {
+		System.out.println("Titulo:");
+		titulo= MyInput.readStringConsole();
+		MyInput.UpperThenLow(titulo);
+		System.out.println("Edicion con nº:");
+		edicion = MyInput.readStringConsole();
+		setCodigo(MyInput.readStringConsole());
+		System.out.println("Fecha de publicacion:");
+		fechaPubli= FechaLugar.daFechaConsole();
+		System.out.println("Ciudad, Estado, Pais separados por enter:");
+		String ciudad=MyInput.readStringConsole();
+		String estado=MyInput.readStringConsole();
+		String pais=MyInput.readStringConsole();
+		setLugarPubli(ciudad, estado, pais);
 	}
+	
+//	public Libro leerWindow() {
+//		Libro libro= new Libro();
+//		Autor autorAux= new Autor();
+//		
+//		libro.autor= autorAux;
+//		
+//		FechaLugar.mensajeDia("dia:");
+//		FechaLugar.mensajeMes("mes:");
+//		FechaLugar.mensajeAnno("año:");
+//		FechaLugar.mensajeCiudad("Que ciudad:");
+//		FechaLugar.mensajePais("Que pais:");
+//		libro.titulo= MyInput.readStringWindow("Titulo:");
+//		libro.edicion= MyInput.readStringWindow("Edicion:");
+//		autorAux.setNombre(MyInput.readStringWindow("Nombre autor:"));
+//		autorAux.setApellidos(MyInput.readStringWindow("Apellido del autor:"));
+//		libro.ISBN=MyInput.readStringWindow("ISBN:");
+//		libro.fechaPubli= FechaLugar.daFechaWindow();
+//		libro.lugarPubli= FechaLugar.daCiudadConWindow() +", "+ FechaLugar.daPaisConWindow();
+//		
+//		return libro;
+//	}
 	
 	@Override
 	
 	public String toString() {
 		
-		return "Titulo:\t\t"+titulo+"\nEdicion:\t\t"+edicion+"\nAutor:\t\t"+this.getAutor()+"\nISBN:\t\t"+ISBN+"\nFecha de"
-				+ " publicacion:\t\t"+ fechaPubli;
+		return "Titulo:\t\t"+titulo+"\nEdicion:\t\t"+edicion+"\nAutor:\t\t"+this.getAutor()+"\nISBN:\t\t"+ISBN+"\n"+lugarPubli+","+ fechaPubli;
 	}
 }

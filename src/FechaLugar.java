@@ -52,10 +52,11 @@ public static void mensajeCiudad(String mensajeCiudadVentana) {
 	public static String daFechaConsole() {
 		
 	do {	
+		System.out.println("dia en nº:");
 	 dia= MyInput.readStringConsole();
-	
+	 System.out.println("Mes en nº");
 	 mes=MyInput.readStringConsole();
-
+	 System.out.println("Año en nº:");
 	 anno=MyInput.readStringConsole();
 	
 	 
