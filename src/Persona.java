@@ -58,19 +58,20 @@ public class Persona {
 	}
 	public void setPaisNacimiento(String paisNacimiento) {
 		this.paisNacimiento= paisNacimiento;
-		MyInput.UpperThenLow(paisNacimiento);
+		this.paisNacimiento=MyInput.UpperThenLow(paisNacimiento);
 	}
 	
 	public void leerConsola() {
 		System.out.println("Nombre:");
 		nombre= MyInput.readStringConsole();
-		MyInput.UpperThenLow(nombre);
+		nombre=MyInput.UpperThenLow(nombre);
 		System.out.println("Apellidos:");
 		apellidos = MyInput.readStringConsole();
 		
 		fechaNacimiento= FechaLugar.daFechaConsole();
 		System.out.println("País nacimiento:");
-		paisNacimiento = FechaLugar.daPaisCons();
+		paisNacimiento = MyInput.readStringConsole();
+		paisNacimiento = MyInput.UpperThenLow(paisNacimiento);
 		
 	}
 	public void leerWindow() {

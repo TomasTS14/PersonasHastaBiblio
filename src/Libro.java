@@ -63,10 +63,10 @@ public class Libro {
 		this.ISBN= ISBN;
 	}
 	public void setLugarPubli (String ciudad, String estado, String pais) {
-		MyInput.UpperThenLow(ciudad);
-		MyInput.UpperThenLow(estado);
-		MyInput.UpperThenLow(pais);
-		lugarPubli+=ciudad+","+estado+"("+pais+")";
+		ciudad=MyInput.UpperThenLow(ciudad);
+		estado=MyInput.UpperThenLow(estado);
+		pais=MyInput.UpperThenLow(pais);
+		lugarPubli=ciudad+", "+estado+" ("+pais+")";
 	}
 	public void setfechaPublicacion(String dia, String mes, String anno) {
 		fechaPubli=FechaLugar.convierteFechas(dia, mes, anno);
@@ -79,9 +79,10 @@ public class Libro {
 	public void leerConsola() {
 		System.out.println("Titulo:");
 		titulo= MyInput.readStringConsole();
-		MyInput.UpperThenLow(titulo);
+		MyInput.UpperThenLow(this.titulo);
 		System.out.println("Edicion con nº:");
 		edicion = MyInput.readStringConsole();
+		System.out.println("ISBN:");
 		setCodigo(MyInput.readStringConsole());
 		System.out.println("Fecha de publicacion:");
 		fechaPubli= FechaLugar.daFechaConsole();
@@ -90,6 +91,8 @@ public class Libro {
 		String estado=MyInput.readStringConsole();
 		String pais=MyInput.readStringConsole();
 		setLugarPubli(ciudad, estado, pais);
+		System.out.println("Nº de paginas:");
+		setPaginas(MyInput.readIntConsole());
 	}
 	
 //	public Libro leerWindow() {
@@ -118,6 +121,11 @@ public class Libro {
 	
 	public String toString() {
 		
-		return "Titulo:\t\t"+titulo+"\nEdicion:\t\t"+edicion+"\nAutor:\t\t"+this.getAutor()+"\nISBN:\t\t"+ISBN+"\n"+lugarPubli+","+ fechaPubli;
+		return "Titulo:\t\t"+titulo+
+				"\nEdicion:\t"+edicion+
+				"\nAutor:\t\t"+this.getAutor()+
+				"\nISBN:\t\t"+ISBN+
+				"\n"+lugarPubli+","+" "+fechaPubli+
+				"\nPaginas:\t"+paginas;
 	}
 }
