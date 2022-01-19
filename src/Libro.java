@@ -63,7 +63,7 @@ public class Libro {
 		this.ISBN= ISBN;
 	}
 	public void setLugarPubli (String ciudad, String estado, String pais) {
-		ciudad=MyInput.UpperThenLow(ciudad);
+		ciudad=MyInput.UpperThenLow(ciudad); //convierte "cosa" en "Cosa"
 		estado=MyInput.UpperThenLow(estado);
 		pais=MyInput.UpperThenLow(pais);
 		lugarPubli=ciudad+", "+estado+" ("+pais+")";

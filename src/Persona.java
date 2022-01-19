@@ -6,7 +6,7 @@ public class Persona {
 	private String  nombre;
 	private String apellidos;
 	private String fechaNacimiento;
-	private int edad;
+	private int edad;  //Por ahora no usada
 	private String paisNacimiento;
 	private String ciudadNacimiento;
 	
@@ -18,12 +18,12 @@ public class Persona {
 		
 		this.nombre= nombre;
 		this.apellidos= apellidos;
-		this.fechaNacimiento= FechaLugar.daFechaConsole();
+		this.fechaNacimiento= FechaLugar.daFechaConsole(); //Pide la fecha en un formato d/m/a
 		this.edad = edad;
-		this.paisNacimiento= FechaLugar.daPaisCons();
+		this.paisNacimiento= FechaLugar.daPaisCons(); //Solo deja cualqueira palabra con la primera letra mayus.
 		this.ciudadNacimiento= FechaLugar.daCiudadCons();
 	}
-	
+	//////////////////Geters////////////////
 	public String getNombre() {
 		return nombre;
 	}
@@ -39,6 +39,7 @@ public class Persona {
 	public String getPaisNacimineto() {
 		return paisNacimiento;
 	}
+	///////////////setters//////
 	public void setNombre(String nombre) {
 		this.nombre= nombre;
 	}
@@ -74,6 +75,7 @@ public class Persona {
 		paisNacimiento = MyInput.UpperThenLow(paisNacimiento);
 		
 	}
+	//FIXME no usar por ahora.
 	public void leerWindow() {
 		String mensajeNombre= "Introduce el nombre de la persona:";
 		String mensajeApellidos= "Introduce el apellido de la persona:";
