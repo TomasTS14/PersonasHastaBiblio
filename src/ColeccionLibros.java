@@ -20,7 +20,7 @@ public class ColeccionLibros {
 			for (int i = 0; i < coleccion.size(); i++) {
 
 				if (coleccion.get(i).getTitulo().compareTo(coleccion.get(i+1).getTitulo()) == -1
-						&& coleccion.get(i).getTitulo().compareTo(coleccion.get(i-1).getTitulo()) == 1) {
+						|| coleccion.get(i).getTitulo().compareTo(coleccion.get(i-1).getTitulo()) == 0) {
 					for (int j = coleccion.size()-1; j > i; j--) {
 						
 						coleccion.add(j+1, coleccion.get(j));
