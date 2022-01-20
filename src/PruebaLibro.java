@@ -1,11 +1,11 @@
 
 public class PruebaLibro {
-
+//Estan desordenados por titulo.
 	public static void main(String[] args) {
 		
 		Autor autor1= new Autor();
 		
-//		autor1.leerConsola();
+
 		
 		autor1.setNombre("Marco");
 		autor1.setApellidos("inaros");
@@ -19,9 +19,39 @@ public class PruebaLibro {
 		
 		ColeccionLibros coleccion1 = new ColeccionLibros();
 		
+		Libro libro5= new Libro();
+		libro5.setAutor(autor2);
+		libro5.setTitulo("Alemania en ruinas");
+		
+		coleccion1.insertarLibro(libro5);
+		
+		Libro libro4 = new Libro();
+		libro4.setAutor(autor2);
+		libro4.setTitulo("El Quijote");
+		libro4.setEdicion("1ª edicion");
+		libro4.setCodigo("12318243-X");
+		libro4.setLugarPubli("Kubre", "Toiloisse", "España");
+		libro4.setfechaPublicacion("2", "4", "1943");
+		libro4.setPaginas(981);
+		
+		
+		coleccion1.insertarLibro(libro4);
+		
+		
+		Libro libro3= new Libro();
+		libro3.setAutor(autor1);
+		libro3.setTitulo("Zarai");
+		libro3.setEdicion("1ª edicion");
+		libro3.setCodigo("12318243-X");
+		libro3.setLugarPubli("Kubre", "Toiloisse", "España");
+		libro3.setfechaPublicacion("2", "4", "1943");
+		libro3.setPaginas(981);
+		
+		coleccion1.insertarLibro(libro3);
+		
 		
 		Libro libro1= new Libro();
-//		libro1.leerConsola();
+
 		libro1.setAutor(autor1);
 		libro1.setTitulo("Des Ruggo");
 		libro1.setEdicion("3ª edicion");
@@ -44,22 +74,38 @@ public class PruebaLibro {
 		
 		coleccion1.insertarLibro(libro2);
 		
+		Libro libro6 = new Libro();
+		libro6.setAutor(autor2);
+		libro6.setTitulo("Aaalo");
+		libro6.setEdicion("1ª edicion");
+		libro6.setCodigo("12318243-X");
+		libro6.setLugarPubli("Kubre", "Toiloisse", "España");
+		libro6.setfechaPublicacion("2", "4", "1943");
+		libro6.setPaginas(981);
 		
-		Libro libro3= new Libro();
-		libro3.setAutor(autor1);
-		libro3.setTitulo("Zarai");
-		libro3.setEdicion("1ª edicion");
-		libro3.setCodigo("12318243-X");
-		libro3.setLugarPubli("Kubre", "Toiloisse", "España");
-		libro3.setfechaPublicacion("2", "4", "1943");
-		libro3.setPaginas(981);
 		
-		coleccion1.insertarLibro(libro3);
+		coleccion1.insertarLibro(libro6);
+		
+		Libro ultimoLibro = new Libro();
+		ultimoLibro.setAutor(autor2);
+		ultimoLibro.setTitulo("Zootopia");
+		ultimoLibro.setEdicion("1ª edicion");
+		ultimoLibro.setCodigo("12318243-X");
+		ultimoLibro.setLugarPubli("Kubre", "Toiloisse", "España");
+		ultimoLibro.setfechaPublicacion("2", "4", "1943");
+		ultimoLibro.setPaginas(981);
+		
+		coleccion1.insertarLibro(ultimoLibro);
+		
+		
+		
 		
 		
 		
 		
 		System.out.println(coleccion1);
+		
+		System.out.println(coleccion1.getPorTitulo("ra")); //El libro sería Zarai, posicion: 5+1
 		
 		
 
