@@ -7,9 +7,9 @@
 3)Getters y setters
 4)Imprime cada libro recurriendo a su toString
 
-##La clase Libro
+## La clase Libro
 1)Usar autor como objeto autor (Personas->Autor), en vez de solo String
 2) Getters y setters  
 3)Los imprime en formato Titulo/Edicion/Autor/ISBN/Lugar y Fecha/nº paginas
 
-##Dos clases auxiliares para ayudar con formato y toma de datos.
+## Dos clases auxiliares para ayudar con formato y toma de datos.
