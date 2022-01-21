@@ -98,12 +98,14 @@ public class PruebaLibro {
 		coleccion1.insertarLibro(ultimoLibro);
 		
 		
-		Libro libroPorConsola = new Libro();
+		//DESCOMENTAR PARA PROBAR POR CONSOLA, lo deje comentado para agilizar la prueba con libros ya hechos. 
 		
-		libroPorConsola.leerConsola();
-		libroPorConsola.setAutor(autor2); //agrego el autor manual, porque es en realidad un objeto. 
-		
-		coleccion1.insertarLibro(libroPorConsola);		
+//		Libro libroPorConsola = new Libro();
+//		
+//		libroPorConsola.leerConsola(); 
+//		libroPorConsola.setAutor(autor2); //agrego el autor manual, porque es en realidad un objeto. 
+//		
+//		coleccion1.insertarLibro(libroPorConsola);		
 		
 		
 		
@@ -113,6 +115,8 @@ public class PruebaLibro {
 		System.out.println(coleccion1);
 		
 		System.out.println(coleccion1.getPorTitulo("ra")); //El libro sería Zarai, posicion: 5+1
+		
+		System.out.println(coleccion1.getPorTitulo("XXz")); //Devolverá -1 porque no hay ningun libro agregado con un titulo similar
 		
 		
 
