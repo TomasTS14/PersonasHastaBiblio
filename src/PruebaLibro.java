@@ -98,6 +98,13 @@ public class PruebaLibro {
 		coleccion1.insertarLibro(ultimoLibro);
 		
 		
+		Libro libroPorConsola = new Libro();
+		
+		libroPorConsola.leerConsola();
+		libroPorConsola.setAutor(autor2); //agrego el autor manual, porque es en realidad un objeto. 
+		
+		coleccion1.insertarLibro(libroPorConsola);		
+		
 		
 		
 		
